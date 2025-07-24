@@ -1,0 +1,8 @@
+track 10 interface g0/0 line-protocol
+ip address 192.168.10.3 255.255.255.0
+ standby 10 ip 192.168.10.1
+ standby 10 priority 80
+ standby 10 preempt
+ standby track 10 decrement 30
+ no shutdown
+ end
