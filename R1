@@ -1,0 +1,14 @@
+track 10 interface g0/0 line-protocol 
+interface GigabitEthernet0/1
+ ip address 192.168.10.2 255.255.255.0
+ standby 10 ip 192.168.10.1
+ standby 10 preempt
+ standby track 10 decrement 30
+ no shutdown
+
+ip dhcp excluded-address 192.168.1.1 192.168.1.10
+ip dhcp pool VLAN10
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 8.8.8.8
+ lease 0 1
